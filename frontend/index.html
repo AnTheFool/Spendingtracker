@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spending Tracker</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Spending Tracker</h1>
+
+  <div id="account-section">
+    <label for="account-select">Select Account:</label>
+    <select id="account-select"></select>
+    <div id="account-balances"></div>
+  </div>
+
+  <form id="expense-form">
+    <input type="number" id="amount" placeholder="Amount" required />
+    <input type="text" id="description" placeholder="Description" />
+    <select id="category" required>
+      <option value="Food">Food</option>
+      <option value="Drinks">Drinks</option>
+      <option value="Cafes">Cafes</option>
+      <option value="Swimming Tickets">Swimming Tickets</option>
+      <option value="Bus Tickets">Bus Tickets</option>
+      <option value="Petrol">Petrol</option>
+      <option value="Parking Fees">Parking Fees</option>
+      <option value="Entertainment">Entertainment</option>
+    </select>
+    <button type="submit">Add Expense</button>
+  </form>
+
+  <h3>Total: $<span id="total-amount">0</span></h3>
+  <canvas id="categoryChart" width="400" height="200"></canvas>
+  <button id="refresh-btn">Refresh</button>
+
+  <ul id="expense-list"></ul>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
